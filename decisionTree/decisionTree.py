@@ -37,6 +37,7 @@ y_min, y_max = x[:, 1].min() - 1, x[:, 1].max() + 1  # 特征2最大值最小值
 xx, yy = np.meshgrid(np.arange(x_min, x_max, 0.1), np.arange(y_min, y_max, 0.1))
 
 Z = clf.predict(np.c_[xx.ravel(), yy.ravel()])
+print(Z.shape)
 Z = Z.reshape(xx.shape)
 
 plt.contourf(xx, yy, Z, alpha=0.4)
